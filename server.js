@@ -27,6 +27,7 @@ app.get('/posts', (req, res) => {
 });
 
 
+
 app.get('/posts/:id', (req, res) => {
   BlogPost
     .findById(req.params.id).exec().then(post => res.json(post.apiRepr()))
@@ -102,7 +103,7 @@ app.delete('/posts/:id', (req, res) => {
 
 //catches any non existant endpoint requests
 app.use('*', function(req, res) {
-  res.status(404).json({message: 'Not Found'});
+  res.status(404).json({message: 'this is not a vaild request'});
 });
 
 
